@@ -24,6 +24,12 @@ public class ParkingLot {
 	public void setAvailablePositionCount(int availablePositionCount) {
 		this.availablePositionCount = availablePositionCount;
 	}
+	public String getParkingboyID() {
+		return parkingboyID;
+	}
+	public void setParkingboyID(String parkingboyID) {
+		this.parkingboyID = parkingboyID;
+	}
 	
 	
 }
