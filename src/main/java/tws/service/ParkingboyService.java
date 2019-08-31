@@ -29,25 +29,6 @@ public class ParkingboyService {
 		return parkingboys;
 	}
 	
-
-//	public List<ParkingLot> getParkinglotByManage(){
-//		List<Parkingboy> parkingboys = parkingboyMapper.getAllParkingboys();
-//		List<ParkingLot> parkingLots = parkingLotMapper.getAllParkingLots();
-//		List<ParkingLot> containParkingLots = new ArrayList<ParkingLot>();
-//		
-//		for(ParkingLot pl : parkingLots) {
-//			System.out.println("parkinglotid"+pl.getParkingboyID());
-//			for(Parkingboy pb : parkingboys) {
-//				System.out.println("parkingboyid"+pb.getId());
-//				if(pl.getParkingboyID() == pb.getId()) {
-//					containParkingLots.add(pl);
-//				}
-//			}
-//		}
-//		System.out.println("包括的停车场"+containParkingLots.get(0).getParkingLotId());
-//		return containParkingLots;
-//	}
-	
 	public List<String> getBoyManageLots(int id){
 		List<ParkingLot> parkingLots = parkingboyMapper.getManage(id);
 		List<String> parkinglotName = new ArrayList<String>();
@@ -69,5 +50,10 @@ public class ParkingboyService {
 	//更新
 	public void updateParkingboy(int id) {
 		parkingboyMapper.updateOneParkingboyNameById(id);
+	}
+	
+	//添加
+	public void insertParkingboy(Parkingboy parkingboy) {
+		parkingboyMapper.insertOneParkingboy(parkingboy);
 	}
 }

@@ -12,18 +12,43 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.jdbc.JdbcTestUtils;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.hamcrest.CoreMatchers;
+import org.springframework.boot.test.context.SpringBootTest;
+import ch.qos.logback.core.status.Status;
 import tws.entity.Employee;
 import tws.entity.Parkingboy;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @MybatisTest
+@AutoConfigureMockMvc
 public class ParkingboyTest {
 	@Autowired
 	private ParkingboyMapper parkingboyMapper;
+	
+	@Autowired
+	private ObjectMapper objectMapper;
+	
+	@Autowired
+    private MockMvc mockMvc;
 	
 	JdbcTemplate jdbcTemplate;
 
@@ -71,7 +96,7 @@ public class ParkingboyTest {
         assertEquals(0,parkingboys.size());
     }
     
-    //改：数据库测试
+    //数据库测试
     @Test
     public void shouldUpdateOneParkingboyNameById() {
     	// given
@@ -82,4 +107,6 @@ public class ParkingboyTest {
         // then
         assertEquals("yangjie",parkingboys.get(0).getName());
     }
+    
+
 }
