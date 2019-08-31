@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,10 +19,13 @@ public class ParkingboyController {
 	@Autowired
 	private ParkingboyService parkingboyService;
 	
-	@GetMapping("")
+	@GetMapping
     public ResponseEntity<List<Parkingboy>> getAll() {
         return ResponseEntity.ok(parkingboyService.getAllParkingboys());
     }
 	
-	
+//	@PostMapping
+//	public ResponseEntity<List<Parkingboy>> addParkingboy(Parkingboy parkingboy) {
+//        return ResponseEntity.created(parkingboyService.insertParkingboy(parkingboy));
+//    }
 }

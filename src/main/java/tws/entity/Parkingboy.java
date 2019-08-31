@@ -1,15 +1,15 @@
 package tws.entity;
 
 public class Parkingboy {
-	private String employeeID;
+	private int id;
 	private String name;
-	
-	public String getEmployeeID() {
-		return employeeID;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

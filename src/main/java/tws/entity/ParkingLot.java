@@ -4,7 +4,7 @@ public class ParkingLot {
 	private String parkingLotStringID;
 	private int capacity;
 	private int availablePositionCount;
-	private String parkingboyID;
+	private int parkingboyID;
 	
 	public String getParkingLotStringID() {
 		return parkingLotStringID;
@@ -24,10 +24,10 @@ public class ParkingLot {
 	public void setAvailablePositionCount(int availablePositionCount) {
 		this.availablePositionCount = availablePositionCount;
 	}
-	public String getParkingboyID() {
+	public int getParkingboyID() {
 		return parkingboyID;
 	}
-	public void setParkingboyID(String parkingboyID) {
+	public void setParkingboyID(int parkingboyID) {
 		this.parkingboyID = parkingboyID;
 	}
 	
