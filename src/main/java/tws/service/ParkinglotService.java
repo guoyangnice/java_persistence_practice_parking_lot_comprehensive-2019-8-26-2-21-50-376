@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import tws.entity.ParkingLot;
+import tws.entity.Parkingboy;
 import tws.repository.ParkingLotMapper;
 
 @Service
@@ -19,5 +20,6 @@ public class ParkinglotService {
 		List<ParkingLot> parkingLots = parkingLotMapper.getAllParkingLots();
 		return parkingLots;
 	}
+	
 	
 }

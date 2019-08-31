@@ -24,5 +24,7 @@ public class ParkingLotConytoller {
     public ResponseEntity<List<ParkingLot>> getAll() {
         return ResponseEntity.ok(parkinglotService.getAllParkingboys());
     }
+	
+
 
 }

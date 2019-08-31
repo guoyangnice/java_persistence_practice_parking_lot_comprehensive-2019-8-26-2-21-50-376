@@ -48,12 +48,21 @@ public class ParkingboyService {
 //		return containParkingLots;
 //	}
 	
-	public List<String>getBoyManageLots(int id){
+	public List<String> getBoyManageLots(int id){
 		List<ParkingLot> parkingLots = parkingboyMapper.getManage(id);
 		List<String> parkinglotName = new ArrayList<String>();
 		for(int i = 0 ; i< parkingLots.size();i++) {
 			parkinglotName.add(parkingLots.get(i).getParkingLotId());
 		}
 		return parkinglotName;
+	}
+	
+	public List<Parkingboy> getOneParkingboy(int id){
+		List<Parkingboy> parkingboys = parkingboyMapper.getOneParkingboy(id);
+		return parkingboys;
+	}
+	
+	public void deleteParkingboy(int id) {
+		parkingboyMapper.deleteParkingboy(id);
 	}
 }
