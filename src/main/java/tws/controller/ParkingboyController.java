@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.http.MediaType;
 
 import tws.entity.ParkingLot;
 import tws.entity.Parkingboy;
@@ -47,7 +49,7 @@ public class ParkingboyController {
 		return ResponseEntity.ok(parkingboyService.getOneParkingboy(id));
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public ResponseEntity deleteOneParkingboy(@PathVariable int id) {
 		parkingboyService.deleteParkingboy(id);
 		return ResponseEntity.ok().build();
@@ -62,7 +64,7 @@ public class ParkingboyController {
 	@PostMapping
 	public ResponseEntity insertOneParkingboy(@RequestBody Parkingboy parkingboy) {
 		parkingboyService.insertParkingboy(parkingboy);
-		return new ResponseEntity(HttpStatus.CREATED);
+		return ResponseEntity.ok().build();
 	}
 	
 }
