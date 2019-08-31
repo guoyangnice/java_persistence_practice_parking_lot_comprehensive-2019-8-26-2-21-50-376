@@ -1,0 +1,1 @@
+select * from parkingboy left join parkinglot on parkingboy.id=parkinglot.parkingboyID;

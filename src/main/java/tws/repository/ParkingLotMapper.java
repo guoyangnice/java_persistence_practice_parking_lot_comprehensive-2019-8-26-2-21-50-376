@@ -11,4 +11,6 @@ import tws.entity.ParkingLot;
 public interface ParkingLotMapper {
 	@Select("select * from parkinglot")
 	List<ParkingLot> getAllParkingLots();
+	
+	
 }

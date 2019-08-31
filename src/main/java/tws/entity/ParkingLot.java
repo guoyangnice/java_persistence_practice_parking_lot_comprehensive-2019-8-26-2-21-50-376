@@ -1,9 +1,17 @@
 package tws.entity;
 
+import org.hibernate.validator.constraints.Length;
+
 public class ParkingLot {
+	@Length(min = 1, max = 100, message = "parkinglotId 长度必须在 {min} - {max} 之间")
 	private String parkingLotId;
+	
+	@Length(min = 1, max = 100, message = "capacity 长度必须在 {min} - {max} 之间")
 	private int capacity;
+	
 	private int availablePositionCount;
+	
+	@Length(min = 1, max = 100, message = "parkingboyID 长度必须在 {min} - {max} 之间")
 	private int parkingboyID;
 	
 	public String getParkingLotId() {

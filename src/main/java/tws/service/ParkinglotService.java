@@ -19,4 +19,5 @@ public class ParkinglotService {
 		List<ParkingLot> parkingLots = parkingLotMapper.getAllParkingLots();
 		return parkingLots;
 	}
+	
 }

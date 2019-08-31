@@ -1,0 +1,1 @@
+insert into parkingboy values(10000,'V3');
