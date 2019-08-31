@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import tws.entity.ParkingLot;
 import tws.entity.Parkingboy;
@@ -25,4 +27,7 @@ public interface ParkingboyMapper {
 	
 	@Delete("delete from parkingboy where #{id} = parkingboy.id")
 	void deleteParkingboy(@Param("id") int id);
+	
+	@Update("update parkingboy set parkingboy.name = 'yangjie' where #{id} = parkingboy.id")
+	void updateOneParkingboyNameById(@Param("id") int id);
 }

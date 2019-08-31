@@ -65,4 +65,9 @@ public class ParkingboyService {
 	public void deleteParkingboy(int id) {
 		parkingboyMapper.deleteParkingboy(id);
 	}
+	
+	//¸üÐÂ
+	public void updateParkingboy(int id) {
+		parkingboyMapper.updateOneParkingboyNameById(id);
+	}
 }

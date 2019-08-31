@@ -37,7 +37,7 @@ public class ParkingboyTest {
         JdbcTestUtils.deleteFromTables(jdbcTemplate, "parkingboy");
     }
 
-    //数据库测试1
+    //数据库测试
     @Test
     public void shouldFetchAllParkingboy() {
         // given
@@ -48,7 +48,7 @@ public class ParkingboyTest {
         assertEquals(1, parkingboys.size());
     }
     
-    //数据库测试2
+    //数据库测试
     @Test
     public void shouldFetchOneParkingboy() {
         // given
@@ -59,9 +59,9 @@ public class ParkingboyTest {
         assertEquals("zhangsan", parkingboys.get(0).getName());
     }
     
-    //数据库测试3
+    //数据库测试
     @Test
-    public void shouldDeleteParkingboy() {
+    public void shouldDeleteOneParkingboyById() {
     	// given
         jdbcTemplate.execute("INSERT INTO parkingboy VALUES(1,'zhangsan')");
         // when
@@ -69,5 +69,17 @@ public class ParkingboyTest {
         List<Parkingboy> parkingboys = parkingboyMapper.getAllParkingboys();
         // then
         assertEquals(0,parkingboys.size());
+    }
+    
+    //改：数据库测试
+    @Test
+    public void shouldUpdateOneParkingboyNameById() {
+    	// given
+        jdbcTemplate.execute("INSERT INTO parkingboy VALUES(1,'zhangsan')");
+        // when
+        parkingboyMapper.updateOneParkingboyNameById(1);
+        List<Parkingboy> parkingboys = parkingboyMapper.getAllParkingboys();
+        // then
+        assertEquals("yangjie",parkingboys.get(0).getName());
     }
 }
