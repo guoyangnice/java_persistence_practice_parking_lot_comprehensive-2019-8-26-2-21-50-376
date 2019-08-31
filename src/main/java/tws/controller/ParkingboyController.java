@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import tws.entity.Parkingboy;
-import tws.repository.ParkingboyMapper;
 import tws.service.ParkingboyService;
 
 @RestController
 @RequestMapping("/parkingboys")
 public class ParkingboyController {
-	@Autowired
-	private ParkingboyMapper parkingboyMapper;
 	
 	@Autowired
 	private ParkingboyService parkingboyService;
